@@ -1,0 +1,591 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lucky Tea 鹊茶 · 利雅得新店达人整合方案</title>
+<style>
+:root{
+  --bg:#FAF8F3; --paper:#FFFFFF; --ink:#1E2A24; --ink2:#42534A; --muted:#7C8A82;
+  --gold:#B08432; --gold-soft:#F5EBD8; --green:#1F4D3D; --green-soft:#E5EEE8;
+  --mango:#D98A2B; --mango-soft:#FBEEDC; --rose:#B06572; --rose-soft:#F7E9EB;
+  --line:#E6E1D6; --shadow:0 1px 2px rgba(30,42,36,.04),0 12px 40px rgba(30,42,36,.05);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  background:var(--bg);color:var(--ink);
+  font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif;
+  font-size:16px;line-height:1.75;-webkit-font-smoothing:antialiased;
+}
+.wrap{max-width:920px;margin:0 auto;padding:0 28px}
+.serif{font-family:Georgia,"Songti SC","Times New Roman",serif}
+
+/* nav */
+.nav{position:sticky;top:0;z-index:20;background:rgba(250,248,243,.88);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+.nav .wrap{display:flex;align-items:center;justify-content:space-between;height:62px;gap:16px}
+.brand{font-size:13px;letter-spacing:.06em;font-weight:600;color:var(--green)}
+.brand b{color:var(--gold)}
+.navlinks{display:flex;gap:22px;font-size:13px}
+.navlinks a{color:var(--muted);text-decoration:none;transition:color .2s}
+.navlinks a:hover{color:var(--gold)}
+
+/* hero */
+.hero{padding:92px 0 70px;position:relative;overflow:hidden}
+.eyebrow{font-size:12px;letter-spacing:.24em;color:var(--gold);text-transform:uppercase;font-weight:600;margin-bottom:26px;display:flex;align-items:center;gap:14px}
+.eyebrow:before{content:"";width:34px;height:1px;background:var(--gold)}
+.hero h1{font-size:clamp(38px,6vw,62px);line-height:1.16;letter-spacing:-.02em;font-weight:600;margin-bottom:22px}
+.hero h1 em{font-style:normal;color:var(--gold)}
+.hero .lede{font-size:19px;color:var(--ink2);max-width:680px;line-height:1.72}
+.meta{margin-top:42px;display:flex;flex-wrap:wrap;gap:10px}
+.tag{font-size:12px;letter-spacing:.04em;padding:7px 15px;border:1px solid var(--line);border-radius:100px;color:var(--ink2);background:var(--paper)}
+
+/* headline strip */
+.headline{background:var(--gold);color:#fff;padding:28px 0}
+.headline .wrap{display:flex;align-items:center;justify-content:center;flex-wrap:wrap;gap:16px 28px;text-align:center}
+.headline .unit{display:flex;align-items:baseline;gap:9px}
+.headline .unit .n{font-family:Georgia,serif;font-size:clamp(32px,5vw,48px);font-weight:600;line-height:1;letter-spacing:-.02em}
+.headline .unit .t{font-size:15px;letter-spacing:.04em;opacity:.95}
+.headline .sep{width:1px;height:36px;background:rgba(255,255,255,.42)}
+.headline .cap{width:100%;text-align:center;font-size:12px;letter-spacing:.16em;opacity:.86;text-transform:uppercase;margin-top:-2px}
+
+/* metric band */
+.band{background:var(--green);color:#F4F1E8}
+.band .wrap{display:grid;grid-template-columns:repeat(3,1fr);padding-top:32px;padding-bottom:30px}
+.band .band-head{grid-column:1/-1;display:flex;justify-content:space-between;align-items:baseline;gap:16px;flex-wrap:wrap;padding-bottom:16px;margin-bottom:26px;border-bottom:1px solid rgba(255,255,255,.14)}
+.band .band-head h2{font-size:13px;letter-spacing:.16em;font-weight:600;text-transform:uppercase}
+.band .band-head span{font-size:11px;opacity:.62}
+.band .m{padding:0 26px;border-right:1px solid rgba(255,255,255,.14)}
+.band .m:first-child{padding-left:0}
+.band .m:last-child{border-right:none}
+.band .num{font-size:clamp(34px,5vw,50px);line-height:1;font-weight:600;letter-spacing:-.02em}
+.band .num small{font-size:.5em;font-weight:400;margin-left:3px;opacity:.8}
+.band .lbl{font-size:13px;opacity:.9;margin-top:12px;letter-spacing:.03em;font-weight:600}
+.band .sub{font-size:11px;opacity:.6;margin-top:5px;line-height:1.5}
+.band .band-foot{grid-column:1/-1;margin-top:26px;font-size:11px;opacity:.6;text-align:center}
+
+/* section */
+section{padding:84px 0}
+.sec-head{margin-bottom:44px}
+.sec-no{font-family:Georgia,serif;font-size:13px;color:var(--gold);letter-spacing:.1em;margin-bottom:13px}
+.sec-head h2{font-size:clamp(28px,4.2vw,40px);line-height:1.24;font-weight:600;letter-spacing:-.01em}
+.sec-head p{color:var(--muted);font-size:16px;margin-top:14px;max-width:680px}
+
+/* insight cards */
+.insight-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+.icard{background:var(--paper);border:1px solid var(--line);border-radius:14px;padding:28px;box-shadow:var(--shadow)}
+.icard .k{font-size:12px;letter-spacing:.14em;color:var(--gold);font-weight:600;text-transform:uppercase}
+.icard h3{font-size:21px;margin:13px 0 10px;font-weight:600}
+.icard p{color:var(--ink2);font-size:15px}
+.callout{margin-top:22px;background:var(--gold-soft);border-left:3px solid var(--gold);padding:20px 24px;border-radius:0 10px 10px 0;font-size:15px;color:#5C4726}
+
+/* direction cards */
+.dirs{display:flex;flex-direction:column;gap:18px}
+.dir{background:var(--paper);border:1px solid var(--line);border-radius:16px;padding:30px 32px;box-shadow:var(--shadow);border-top:4px solid var(--gold)}
+.dir.d1{border-top-color:var(--mango)}
+.dir.d2{border-top-color:var(--rose)}
+.dir.d3{border-top-color:var(--green)}
+.dir .dh{display:flex;justify-content:space-between;align-items:flex-start;gap:16px;flex-wrap:wrap}
+.dir .dt{font-size:12px;letter-spacing:.12em;font-weight:600;color:var(--muted);text-transform:uppercase}
+.dir h3{font-size:23px;font-weight:600;margin-top:6px;line-height:1.3}
+.dir .count{font-size:12px;padding:5px 13px;border-radius:100px;font-weight:600;white-space:nowrap}
+.d1 .count{background:var(--mango-soft);color:var(--mango)}
+.d2 .count{background:var(--rose-soft);color:var(--rose)}
+.d3 .count{background:var(--green-soft);color:var(--green)}
+.dir .desc{color:var(--ink2);font-size:15px;margin-top:14px}
+.dir .chain{display:flex;flex-wrap:wrap;align-items:center;gap:8px;margin-top:20px;font-size:12px}
+.dir .chain .node{padding:6px 12px;border-radius:8px;background:var(--bg);border:1px solid var(--line);font-weight:600;color:var(--ink2)}
+.dir .chain .arw{color:var(--gold);font-weight:600}
+.dir .products{margin-top:16px;font-size:13px;color:var(--muted)}
+.dir .products b{color:var(--ink);font-weight:600}
+
+/* precision-fit evidence */
+.fit-note{margin-top:26px;margin-bottom:8px;background:var(--mango-soft);border:1px solid #F0D9BC;border-radius:12px;padding:22px 24px}
+.fit-head{font-size:13px;letter-spacing:.04em;font-weight:600;color:var(--mango);margin-bottom:16px;display:flex;align-items:center;gap:9px}
+.fit-head:before{content:"";width:16px;height:2px;background:var(--mango)}
+.fit-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.fit .fn{font-family:Georgia,serif;font-size:14px;color:var(--mango);font-weight:600;margin-bottom:5px}
+.fit h4{font-size:14px;font-weight:600;margin-bottom:6px}
+.fit p{font-size:12.5px;color:#7A5230;line-height:1.62}
+.d1 .desc strong{color:var(--mango)}
+
+/* creator cards */
+.group-label{display:flex;align-items:center;gap:12px;margin:34px 0 14px}
+.group-label:first-child{margin-top:0}
+.group-label .bar{width:4px;height:20px;border-radius:2px;background:var(--gold)}
+.group-label.g1 .bar{background:var(--mango)}
+.group-label.g2 .bar{background:var(--rose)}
+.group-label.g3 .bar{background:var(--green)}
+.group-label h4{font-size:16px;font-weight:600}
+.group-label span{font-size:12px;color:var(--muted)}
+.creator{background:var(--paper);border:1px solid var(--line);border-radius:14px;padding:20px 24px;margin-bottom:10px;box-shadow:var(--shadow);display:grid;grid-template-columns:1fr auto;gap:14px 22px;align-items:start}
+.creator .info{display:flex;gap:16px;align-items:flex-start}
+.creator .thumb{flex:none;position:relative;width:62px;height:82px;border-radius:8px;overflow:hidden;background:var(--gold-soft);display:block}
+.creator .thumb img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .3s}
+.creator .thumb:hover img{transform:scale(1.06)}
+.creator .thumb:after{content:"▶";position:absolute;bottom:4px;right:4px;width:20px;height:20px;border-radius:50%;background:rgba(30,42,36,.82);color:#fff;font-size:9px;display:flex;align-items:center;justify-content:center;padding-left:1px}
+.creator .nm{font-size:18px;font-weight:600;line-height:1.3}
+.creator .nm .handle{font-size:12px;color:var(--muted);font-weight:400;margin-left:8px}
+.creator .rolechip{display:inline-block;font-size:11px;letter-spacing:.03em;padding:3px 10px;border-radius:100px;margin-top:6px;font-weight:600}
+.g1 .rolechip{background:var(--mango-soft);color:var(--mango)}
+.g2 .rolechip{background:var(--rose-soft);color:var(--rose)}
+.g3 .rolechip{background:var(--green-soft);color:var(--green)}
+.creator .stat{font-size:13px;color:var(--ink2);margin-top:8px}
+.creator .stat b{font-family:Georgia,serif;font-size:15px;color:var(--ink)}
+.creator .links{display:flex;flex-direction:column;gap:8px;align-items:flex-end;min-width:200px}
+.creator .lk{font-size:12px;text-decoration:none;padding:7px 13px;border-radius:100px;white-space:nowrap;transition:all .2s;display:inline-flex;align-items:center;gap:6px}
+.creator .lk.home{background:var(--green);color:#fff}
+.creator .lk.home:hover{background:#17392D}
+.creator .lk.video{background:var(--bg);color:var(--ink2);border:1px solid var(--line)}
+.creator .lk.video:hover{border-color:var(--gold);color:var(--gold)}
+.creator .lk .ico{font-family:Georgia,serif;opacity:.8}
+.vid-note{font-size:11px;color:var(--muted);text-align:right;max-width:210px;line-height:1.4}
+.fdepth{font-size:11px;color:var(--muted);margin-top:36px;text-align:center}
+
+/* routing */
+.route-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+.rcard{background:var(--paper);border:1px solid var(--line);border-radius:14px;padding:28px;box-shadow:var(--shadow)}
+.rcard .k{font-size:12px;letter-spacing:.12em;font-weight:600;text-transform:uppercase;color:var(--green)}
+.rcard.warn .k{color:var(--mango)}
+.rcard h3{font-size:19px;font-weight:600;margin:12px 0 12px}
+.rcard ul{list-style:none;display:flex;flex-direction:column;gap:10px}
+.rcard li{font-size:14px;color:var(--ink2);padding-left:18px;position:relative}
+.rcard li:before{content:"";position:absolute;left:0;top:10px;width:6px;height:6px;border-radius:50%;background:var(--green)}
+.rcard.warn li:before{background:var(--mango)}
+.rcard .cta{margin-top:18px;padding:12px 14px;border-radius:8px;background:var(--green-soft);font-size:13px;color:var(--green);font-weight:600}
+.rcard.warn .cta{background:var(--mango-soft);color:var(--mango)}
+.boundary{margin-top:20px;background:#FFF6F0;border:1px solid #F2D9C4;border-left:3px solid var(--mango);border-radius:0 10px 10px 0;padding:18px 22px;font-size:14px;color:#7A4B26}
+
+/* tracking */
+.track-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+.tbox{background:var(--paper);border:1px solid var(--line);border-radius:14px;padding:28px;box-shadow:var(--shadow)}
+.tbox h3{font-size:17px;font-weight:600;margin-bottom:14px}
+.tbox p{font-size:14px;color:var(--ink2)}
+.code-demo{display:flex;flex-wrap:wrap;gap:8px;margin-top:16px}
+.code-demo span{font-family:Georgia,serif;font-size:12px;padding:6px 11px;border:1px dashed var(--gold);border-radius:6px;color:var(--gold)}
+.tbox ul{list-style:none;display:flex;flex-direction:column;gap:11px;margin-top:14px}
+.tbox li{font-size:14px;color:var(--ink2);padding-left:18px;position:relative}
+.tbox li:before{content:"";position:absolute;left:0;top:10px;width:6px;height:6px;border-radius:50%;background:var(--gold)}
+
+/* measure */
+.measure{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+.mbox{border:1px solid var(--line);border-radius:14px;padding:28px;background:var(--paper);box-shadow:var(--shadow)}
+.mbox h3{font-size:17px;margin-bottom:14px;font-weight:600}
+.mbox ul{list-style:none;display:flex;flex-direction:column;gap:11px}
+.mbox li{font-size:14px;color:var(--ink2);padding-left:18px;position:relative}
+.mbox li:before{content:"";position:absolute;left:0;top:10px;width:6px;height:6px;border-radius:50%;background:var(--gold)}
+.mbox.bound{background:var(--bg)}
+.mbox.bound li:before{background:var(--muted)}
+
+/* waves */
+.waves{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+.wave{border:1px solid var(--line);border-radius:14px;padding:28px;background:var(--paper);box-shadow:var(--shadow)}
+.wave .wn{font-family:Georgia,serif;font-size:12px;letter-spacing:.12em;color:var(--gold);font-weight:600}
+.wave h3{font-size:20px;font-weight:600;margin:10px 0 12px}
+.wave p{font-size:14px;color:var(--ink2)}
+.wave .wtag{margin-top:16px;font-size:12px;padding:8px 12px;border-radius:8px;background:var(--green-soft);color:var(--green);font-weight:600;display:inline-block}
+.wave.w2{background:var(--green);border-color:var(--green);color:#F4F1E8}
+.wave.w2 h3{color:#F4F1E8}
+.wave.w2 p{color:rgba(244,241,232,.82)}
+.wave.w2 .wtag{background:rgba(255,255,255,.14);color:#F4F1E8}
+
+/* footer */
+.foot{background:var(--green);color:#F4F1E8;padding:66px 0 50px}
+.foot h2{font-size:28px;font-weight:600;margin-bottom:28px}
+.flow{display:flex;flex-wrap:wrap;gap:12px;align-items:center}
+.flow .s{border:1px solid rgba(255,255,255,.24);border-radius:100px;padding:10px 18px;font-size:14px}
+.flow .ar{opacity:.5}
+.foot .sig{margin-top:42px;padding-top:22px;border-top:1px solid rgba(255,255,255,.14);font-size:12px;opacity:.6;letter-spacing:.05em;display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px}
+
+@media(max-width:680px){
+  .fit-grid{grid-template-columns:1fr}
+  .navlinks{display:none}
+  .band .wrap{grid-template-columns:1fr}
+  .band .m{border-right:none;border-bottom:1px solid rgba(255,255,255,.14);padding:0 0 20px}
+  .band .m:last-child{border-bottom:none;padding-bottom:0}
+  .insight-grid,.measure,.route-grid,.track-grid,.waves{grid-template-columns:1fr}
+  .creator{grid-template-columns:1fr}
+  .creator .links{align-items:flex-start;min-width:0}
+  .headline .sep{display:none}
+  section{padding:62px 0}
+  .hero{padding:62px 0 52px}
+}
+@media print{
+  .nav{display:none}
+  body{background:#fff}
+  .band,.foot,.headline,.wave.w2{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  section{padding:36px 0}
+}
+</style>
+</head>
+<body>
+
+<div class="nav"><div class="wrap">
+  <div class="brand">Lucky Tea 鹊茶 · <b>利雅得新店推广方案</b></div>
+  <div class="navlinks">
+    <a href="#opportunity">洞察</a><a href="#strategy">策略</a><a href="#plan">达人</a><a href="#routing">路径</a><a href="#measure">衡量</a>
+  </div>
+</div></div>
+
+<header class="hero"><div class="wrap">
+  <div class="eyebrow">Proposal · Riyadh, Saudi Arabia · 2026</div>
+  <h1 class="serif">让对的人，<br>发现<em>鹊茶的新据点</em></h1>
+  <p class="lede">一份围绕 Ar Rayyan 新店展开的本地达人整合方案 —— 以三条内容线分别触达菲律宾社群、沙特甜品爱好者与利雅得茶饮消费者，把"新店开业"转化为"值得专程去一次"的真实理由。</p>
+  <div class="meta">
+    <span class="tag">新店拉新 New Branch Acquisition</span>
+    <span class="tag">产品种草 Hero Product Discovery</span>
+    <span class="tag">品牌认知 Brand Awareness</span>
+  </div>
+</div></header>
+
+<div class="headline"><div class="wrap">
+  <div class="unit"><span class="n serif">20,000</span><span class="t">SAR 总预算</span></div>
+  <div class="sep"></div>
+  <div class="unit"><span class="n serif">7</span><span class="t">位本地达人</span></div>
+  <div class="sep"></div>
+  <div class="unit"><span class="n serif">3</span><span class="t">条内容线</span></div>
+  <div class="cap">一个整合包 · 精准人群 × 产品匹配 × 多路径承接</div>
+</div></div>
+
+<div class="band" id="effect"><div class="wrap">
+  <div class="band-head">
+    <h2>预期效果 · Estimated Impact</h2>
+    <span>基于 7 位达人近期真实内容数据的保守估算</span>
+  </div>
+  <div class="m"><div class="num serif">15.9<small>万</small></div><div class="lbl">预期播放量</div><div class="sub">每人近期 5 条视频<br>播放中位数合计</div></div>
+  <div class="m"><div class="num serif">3,900</div><div class="lbl">预期互动量</div><div class="sub">点赞 + 评论 + 分享<br>按播放 × 互动率估算</div></div>
+  <div class="m"><div class="num serif">33.6<small>万</small></div><div class="lbl">粉丝覆盖</div><div class="sub">7 位本地达人<br>粉丝量合计</div></div>
+  <div class="band-foot">采用中位数而非爆款，代表可持续的常态水平。菲律宾线按社群匹配度选人，播放数据不作为该线的选人依据。以上为预估区间，非结果承诺。</div>
+</div></div>
+
+<section id="opportunity"><div class="wrap">
+  <div class="sec-head">
+    <div class="sec-no">01 / 机会洞察</div>
+    <h2 class="serif">新店、新人群、新品类，三个机会叠在一起</h2>
+    <p>本次客户的核心目标是推广最新开业的 Ar Rayyan 店。我们在实地走访与试吃后，发现两个值得放大的真实机会。</p>
+  </div>
+  <div class="insight-grid">
+    <div class="icard">
+      <div class="k">New Branch · Ar Rayyan</div>
+      <h3>一家值得专程去的新店</h3>
+      <p>Ar Rayyan 是鹊茶在利雅得的第 4 家门店，也是目前唯一同时提供奶茶、果茶、沙冰、甜品与麻辣烫的门店。新店发现本身就是一个天然的内容钩子。</p>
+    </div>
+    <div class="icard">
+      <div class="k">Community Insight</div>
+      <h3>新店周边的菲律宾社群</h3>
+      <p>实地观察发现，Ar Rayyan 新店所在区域有活跃的菲律宾人群。相比奶茶，麻辣烫更像一顿完整的餐食，更有能力让人专门跑一趟 —— 这是新店拉新最值得尝试的组合。</p>
+    </div>
+  </div>
+  <div class="callout">
+    <strong>核心洞察：</strong>这份方案不追求"让全利雅得都知道"，而追求"让对的人知道对的产品"。因此每条线的选人标准不同 —— 品牌线看覆盖，甜品线看种草，而<strong>菲律宾线看社群匹配度</strong>：创作者是否真的在和目标人群对话、是否已经在这个品类里产内容、内容场景是否与新店重合。用精准匹配替代泛流量覆盖，降低从"看到"到"到店"的行动成本。
+  </div>
+</div></section>
+
+<section id="strategy"><div class="wrap">
+  <div class="sec-head">
+    <div class="sec-no">02 / 三条策略线</div>
+    <h2 class="serif">不是 7 条孤立视频，而是三套各司其职的角色</h2>
+    <p>三位创作者承担三个不同任务。它们彼此独立，又共同构成"新店拉新 + 产品种草 + 品牌认知"的完整闭环。</p>
+  </div>
+  <div class="dirs">
+
+    <div class="dir d1">
+      <div class="dh">
+        <div><div class="dt">Direction 01 · New Branch Acquisition</div><h3>菲律宾社群 × 麻辣烫 + 柠檬茶</h3></div>
+        <span class="count">3 位创作者</span>
+      </div>
+      <p class="desc">新店拉新主力。麻辣烫提供"专程去吃一顿"的理由，柠檬茶则是吃辣时自然的搭配。内容围绕新店发现、自选食材、称重、汤底辣度、真实试吃与门店位置展开。</p>
+      <div class="chain"><span class="node">Filipino Community</span><span class="arw">→</span><span class="node">Malatang + Lemon Tea</span><span class="arw">→</span><span class="node">Ar Rayyan 新店</span></div>
+      <div class="products"><b>核心产品：</b>Malatang · Lemon Tea　｜　<b>选人标准：</b>社群归属 · 内容契合 · 利雅得生活场景</div>
+    </div>
+
+    <div class="dir d2">
+      <div class="dh">
+        <div><div class="dt">Direction 02 · Hero Product Discovery</div><h3>沙特本地消费者 × 芒果甜品</h3></div>
+        <span class="count">2 位创作者</span>
+      </div>
+      <p class="desc">产品种草线。本地伙伴试吃后认为芒果大福口感新鲜清爽，很适合沙特消费者。这条线不只是说"鹊茶有甜品"，而是尝试建立一个清晰记忆点：Lucky Tea × Mango Desserts。</p>
+      <div class="chain"><span class="node">Saudi Consumers</span><span class="arw">→</span><span class="node">Mango Daifuku</span><span class="arw">→</span><span class="node">Discover Lucky Tea</span></div>
+      <div class="products"><b>核心产品：</b>Mango Daifuku · Mango Snow Ice　｜　<b>选人标准：</b>沙特女性生活方式 · 甜品 / 咖啡厅发现 · 利雅得生活</div>
+    </div>
+
+    <div class="dir d3">
+      <div class="dh">
+        <div><div class="dt">Direction 03 · Brand Awareness</div><h3>奶茶 × 品牌认知 × 全门店承接</h3></div>
+        <span class="count">2 位创作者</span>
+      </div>
+      <p class="desc">品牌与新店传播线。奶茶是鹊茶长期稳定的核心产品，这条线承担双重任务：让消费者认识这是一个值得尝试的中国茶饮品牌，同时带出"鹊茶在利雅得已有 4 家门店"的信息。</p>
+      <div class="chain"><span class="node">Riyadh Consumers</span><span class="arw">→</span><span class="node">Chinese Milk Tea</span><span class="arw">→</span><span class="node">4 Locations + Delivery</span></div>
+      <div class="products"><b>推荐产品池：</b>杨枝甘露 · 芒果椰椰 · 黑糖波霸奶茶 · 门店 Best Seller（不强制统一）　｜　<b>选人标准：</b>奶茶 / 利雅得生活方式达人</div>
+    </div>
+
+  </div>
+  <div class="thread" style="margin-top:26px;text-align:center;font-size:15px;color:var(--ink2);background:var(--green-soft);border-radius:10px;padding:18px 24px">三条线合起来，才是完整答案：<b>新店拉新 + 明星产品发现 + 品牌认知</b> —— 不是 7 个人发 7 条视频，而是一张有明确分工的覆盖网。</div>
+</div></section>
+
+<section id="plan"><div class="wrap">
+  <div class="sec-head">
+    <div class="sec-no">03 / 达人阵容</div>
+    <h2 class="serif">7 位达人，按角色分组</h2>
+    <p>数据来自各账号近期真实公开内容。点击封面可查看代表视频，点击"查看主页"可核验账号。</p>
+  </div>
+
+  <div class="group-label g1"><div class="bar"></div><h4>Direction 01 · 菲律宾社群线（3 位）</h4><span>选人标准：社群匹配度，而非播放量</span></div>
+  <p style="font-size:14px;color:var(--ink2);background:var(--mango-soft);border-radius:10px;padding:14px 18px;margin-bottom:16px">这一条线我们刻意按<strong style="color:var(--mango)">社群契合度</strong>而非播放量选人。原因是新店拉新要的不是最大范围的曝光，而是真正能触达 Ar Rayyan 周边菲律宾社群、并已经在相关内容品类里发声的创作者。下方每位达人的代表视频，就是这种匹配的具体证据。</p>
+
+  <div class="creator">
+    <div class="info">
+      <a class="thumb" href="https://www.tiktok.com/@itsme.ahnge/video/7707122327225437460" target="_blank" rel="noopener"><img src="covers/angelica.jpg" alt="代表视频画面"></a>
+      <div>
+        <div class="nm">Angelica Matias <span class="handle">@itsme.ahnge</span></div>
+        <span class="rolechip">精准匹配 · 菲律宾语社群连接者</span>
+        <div class="stat">粉丝 <b>66.2K</b> · 互动率 <b>8.09%</b>（小受众高互动）</div>
+        <div class="stat" style="margin-top:4px">代表内容 "Sugod na mga kabayan" 用菲律宾语直接对话同胞，受众高度垂直 —— 触达的是人，不是泛流量。</div>
+      </div>
+    </div>
+    <div class="links">
+      <a class="lk home" href="https://www.tiktok.com/@itsme.ahnge" target="_blank" rel="noopener"><span class="ico">↗</span> 查看主页</a>
+      <a class="lk video" href="https://www.tiktok.com/@itsme.ahnge/video/7707122327225437460" target="_blank" rel="noopener"><span class="ico">▶</span> 代表视频</a>
+      <div class="vid-note">“Sugod na mga kabayan” · 7.8 万播放</div>
+    </div>
+  </div>
+
+  <div class="creator">
+    <div class="info">
+      <a class="thumb" href="https://www.tiktok.com/@mafamac/video/7700712452241100052" target="_blank" rel="noopener"><img src="covers/mark.jpg" alt="代表视频画面"></a>
+      <div>
+        <div class="nm">Mark Allan Alvarez <span class="handle">@mafamac</span></div>
+        <span class="rolechip">精准匹配 · 麻辣烫内容经验</span>
+        <div class="stat">粉丝 <b>5.2K</b> · 互动率 <b>1.95%</b></div>
+        <div class="stat" style="margin-top:4px">已自发拍过麻辣烫 food trip，且长期做菲律宾社群在利雅得的探店 —— 产品与受众双重契合，几乎不需要教育。</div>
+      </div>
+    </div>
+    <div class="links">
+      <a class="lk home" href="https://www.tiktok.com/@mafamac" target="_blank" rel="noopener"><span class="ico">↗</span> 查看主页</a>
+      <a class="lk video" href="https://www.tiktok.com/@mafamac/video/7700712452241100052" target="_blank" rel="noopener"><span class="ico">▶</span> 代表视频</a>
+      <div class="vid-note">麻辣烫 food trip · 3,843 播放</div>
+    </div>
+  </div>
+
+  <div class="creator">
+    <div class="info">
+      <a class="thumb" href="https://www.tiktok.com/@ardhen66/video/7710697244684520724" target="_blank" rel="noopener"><img src="covers/kamoro.jpg" alt="代表视频画面"></a>
+      <div>
+        <div class="nm">Kamoro <span class="handle">@ardhen66</span></div>
+        <span class="rolechip">精准匹配 · 菲律宾美食发现</span>
+        <div class="stat">粉丝 <b>19K</b> · 互动率 <b>4.04%</b></div>
+        <div class="stat" style="margin-top:4px">持续制作 Pinoy street food 与社群生活发现内容，是菲律宾观众在沙特"去哪吃"的日常参考来源。</div>
+      </div>
+    </div>
+    <div class="links">
+      <a class="lk home" href="https://www.tiktok.com/@ardhen66" target="_blank" rel="noopener"><span class="ico">↗</span> 查看主页</a>
+      <a class="lk video" href="https://www.tiktok.com/@ardhen66/video/7710697244684520724" target="_blank" rel="noopener"><span class="ico">▶</span> 代表视频</a>
+      <div class="vid-note">Pinoy street food 探店 · 3.3 万播放</div>
+    </div>
+  </div>
+
+  <div class="fit-note">
+    <div class="fit-head">为什么是这三位：精准匹配的三个证据</div>
+    <div class="fit-grid">
+      <div class="fit"><div class="fn">01</div><h4>社群语言一致</h4><p>Angelica 以菲律宾语与粉丝直接对话，视频标题 "Sugod na mga kabayan"（出发吧，同胞们）就是社群内部的召唤 —— 受众高度垂直。</p></div>
+      <div class="fit"><div class="fn">02</div><h4>品类经验已在</h4><p>Mark 已自发拍过麻辣烫 food trip；Kamoro 长期制作 Pinoy street food 内容。麻辣烫与街头美食对他们不是陌生品类，而是持续在讲的题材。</p></div>
+      <div class="fit"><div class="fn">03</div><h4>场景天然重合</h4><p>三人的内容核心都是"菲律宾人在沙特的生活与去哪吃"，与 Ar Rayyan 新店所在区域的活跃社群高度重合 —— 从内容到到店的路径最短。</p></div>
+    </div>
+  </div>
+
+  <div class="group-label g2"><div class="bar"></div><h4>Direction 02 · 沙特芒果甜品线（2 位）</h4><span>产品种草</span></div>
+
+  <div class="creator">
+    <div class="info">
+      <a class="thumb" href="https://www.tiktok.com/@danah.roh/video/7708160097821674772" target="_blank" rel="noopener"><img src="covers/danah.jpg" alt="代表视频画面"></a>
+      <div>
+        <div class="nm">Danah <span class="handle">@danah.roh</span></div>
+        <span class="rolechip">沙特甜品 / 本地美食</span>
+        <div class="stat">粉丝 <b>63.3K</b> · 播放中位数 <b>61,200</b> · 互动率 <b>3.13%</b></div>
+      </div>
+    </div>
+    <div class="links">
+      <a class="lk home" href="https://www.tiktok.com/@danah.roh" target="_blank" rel="noopener"><span class="ico">↗</span> 查看主页</a>
+      <a class="lk video" href="https://www.tiktok.com/@danah.roh/video/7708160097821674772" target="_blank" rel="noopener"><span class="ico">▶</span> 代表视频</a>
+      <div class="vid-note">沙特甜品探店 · 7.7 万播放</div>
+    </div>
+  </div>
+
+  <div class="creator">
+    <div class="info">
+      <a class="thumb" href="https://www.tiktok.com/@nourhblogger/video/7708995971736243476" target="_blank" rel="noopener"><img src="covers/noura.jpg" alt="代表视频画面"></a>
+      <div>
+        <div class="nm">Noura <span class="handle">@nourhblogger</span></div>
+        <span class="rolechip">甜品 / 生活方式</span>
+        <div class="stat">粉丝 <b>67.1K</b> · 播放中位数 <b>8,048</b> · 互动率 <b>3.68%</b></div>
+      </div>
+    </div>
+    <div class="links">
+      <a class="lk home" href="https://www.tiktok.com/@nourhblogger" target="_blank" rel="noopener"><span class="ico">↗</span> 查看主页</a>
+      <a class="lk video" href="https://www.tiktok.com/@nourhblogger/video/7708995971736243476" target="_blank" rel="noopener"><span class="ico">▶</span> 代表视频</a>
+      <div class="vid-note">Cloudy cake 甜品探店 · 1.9 万播放</div>
+    </div>
+  </div>
+
+  <div class="group-label g3"><div class="bar"></div><h4>Direction 03 · 奶茶与品牌线（2 位）</h4><span>品牌认知 + 新店传播</span></div>
+
+  <div class="creator">
+    <div class="info">
+      <a class="thumb" href="https://www.tiktok.com/@joury.riyadh/video/7710699577745198356" target="_blank" rel="noopener"><img src="covers/joury.jpg" alt="代表视频画面"></a>
+      <div>
+        <div class="nm">Joury <span class="handle">@joury.riyadh</span></div>
+        <span class="rolechip">新店发现 / 利雅得生活</span>
+        <div class="stat">粉丝 <b>80.6K</b> · 播放中位数 <b>37,500</b> · 互动率 <b>1.42%</b></div>
+      </div>
+    </div>
+    <div class="links">
+      <a class="lk home" href="https://www.tiktok.com/@joury.riyadh" target="_blank" rel="noopener"><span class="ico">↗</span> 查看主页</a>
+      <a class="lk video" href="https://www.tiktok.com/@joury.riyadh/video/7710699577745198356" target="_blank" rel="noopener"><span class="ico">▶</span> 代表视频</a>
+      <div class="vid-note">新开业分店探店 · 7.6 万播放</div>
+    </div>
+  </div>
+
+  <div class="creator">
+    <div class="info">
+      <a class="thumb" href="https://www.tiktok.com/@themeowna/video/7709147839590403348" target="_blank" rel="noopener"><img src="covers/aljoury.jpg" alt="代表视频画面"></a>
+      <div>
+        <div class="nm">Aljoury <span class="handle">@themeowna</span></div>
+        <span class="rolechip">饮品评测 / 咖啡甜品</span>
+        <div class="stat">粉丝 <b>34.3K</b> · 播放中位数 <b>32,300</b> · 互动率 <b>1.44%</b></div>
+      </div>
+    </div>
+    <div class="links">
+      <a class="lk home" href="https://www.tiktok.com/@themeowna" target="_blank" rel="noopener"><span class="ico">↗</span> 查看主页</a>
+      <a class="lk video" href="https://www.tiktok.com/@themeowna/video/7709147839590403348" target="_blank" rel="noopener"><span class="ico">▶</span> 代表视频</a>
+      <div class="vid-note">饮品口味评测 · 29.8 万播放</div>
+    </div>
+  </div>
+
+  <p class="fdepth">所有链接均指向真实 TikTok 页面，可逐条核验内容方向与社群属性。不同线的选人标准不同：菲律宾线以社群与内容匹配度为核心依据，播放数据不作为该线的筛选条件。</p>
+</div></section>
+
+<section id="routing"><div class="wrap">
+  <div class="sec-head">
+    <div class="sec-no">04 / 产品与到店路径</div>
+    <h2 class="serif">不同的产品，必须走向不同的门店</h2>
+    <p>鹊茶目前在利雅得有 4 家门店，但并非每家都有麻辣烫。因此两条内容线必须使用不同的行动指引 —— 这是本次传播最关键的细节。</p>
+  </div>
+  <div class="route-grid">
+    <div class="rcard">
+      <div class="k">奶茶 / 果茶 / 甜品 / 沙冰</div>
+      <h3>可导向全部 4 家门店</h3>
+      <ul>
+        <li>Lucky Tea currently has 4 locations across Riyadh</li>
+        <li>在 Google Maps 搜索 “Lucky Tea”，选择最近的门店</li>
+        <li>也可通过 HungerStation / Jahez 下单</li>
+      </ul>
+      <div class="cta">CTA：Search “Lucky Tea” on Google Maps · Order via HungerStation / Jahez</div>
+    </div>
+    <div class="rcard warn">
+      <div class="k">麻辣烫 Malatang</div>
+      <h3>只导向 Ar Rayyan 新店或明确标注的参与门店</h3>
+      <ul>
+        <li>麻辣烫仅在部分门店供应，Ar Rayyan 新店为重点推广店</li>
+        <li>内容中需明确标注门店名称或 “participating locations”</li>
+        <li>同时提供新店地址与 Google Maps 定位</li>
+      </ul>
+      <div class="cta">CTA：Visit our Ar Rayyan branch · Al-Imam Ahmad Bin Hanbal Street, Ar Rayyan, Riyadh 14212</div>
+    </div>
+  </div>
+  <div class="boundary">
+    <strong>传播红线：</strong>麻辣烫相关内容绝不写 “Go to your nearest Lucky Tea”。统一的“最近门店”指引只适用于奶茶 / 甜品线；麻辣烫必须精确导向 Ar Rayyan 新店，或明确标注为有麻辣烫的 participating locations。
+  </div>
+  <p style="margin-top:16px;font-size:12px;color:var(--muted)">新店定位：<a href="https://maps.app.goo.gl/Vagohcy4hAeRNRhf9?g_st=ic" target="_blank" rel="noopener" style="color:var(--gold)">Google Maps ↗</a>　｜　现有门店：As Sulimaniyah · Al Hamra · Ar Rabi Square · Ar Rayyan（新）</p>
+</div></section>
+
+<section id="track"><div class="wrap">
+  <div class="sec-head">
+    <div class="sec-no">05 / 转化追踪</div>
+    <h2 class="serif">让每一位达人的效果都可以被单独看见</h2>
+    <p>我们建议为每位达人配置独立的优惠码，并尽可能追踪到店与外卖订单。</p>
+  </div>
+  <div class="track-grid">
+    <div class="tbox">
+      <h3>独立优惠码 · Per-Creator Code</h3>
+      <p>每人一个专属码，用于判断哪位达人真正带来了购买、哪条内容线更有效。具体优惠形式（折扣 / 满减 / 麻辣烫赠柠檬茶 / 加购优惠）需结合客户利润空间确认后再定。</p>
+      <div class="code-demo"><span>CODE A</span><span>CODE B</span><span>CODE C</span><span>CODE D</span><span>CODE E</span><span>CODE F</span><span>CODE G</span></div>
+      <p style="font-size:12px;color:var(--muted);margin-top:10px">* 上图为结构示意，实际码名与优惠形式待客户确认后确定。</p>
+    </div>
+    <div class="tbox">
+      <h3>追踪的核心不是"便宜"，而是"归因"</h3>
+      <ul>
+        <li>优惠码核销：判断真实转化来源</li>
+        <li>到店 / 咨询信号：新店拉新是否有效</li>
+        <li>外卖订单：HungerStation / Jahez 的转化</li>
+        <li>受众反馈：哪款产品被讨论最多</li>
+      </ul>
+    </div>
+  </div>
+</div></section>
+
+<section id="measure"><div class="wrap">
+  <div class="sec-head">
+    <div class="sec-no">06 / 衡量与边界</div>
+    <h2 class="serif">我们看什么，以及我们诚实界定什么</h2>
+    <p>清晰的成功标准与诚实的预期管理，是这份方案专业性的体现。</p>
+  </div>
+  <div class="measure">
+    <div class="mbox">
+      <h3>第一轮会重点收集</h3>
+      <ul>
+        <li>内容层：播放、互动、完播表现</li>
+        <li>转化层：优惠码核销、到店与外卖订单</li>
+        <li>反馈层：评论中的产品讨论与门店提问</li>
+        <li>效率层：哪条线 / 哪位达人转化最好</li>
+      </ul>
+    </div>
+    <div class="mbox bound">
+      <h3>我们诚实界定的边界</h3>
+      <ul>
+        <li>本方案聚焦新店认知、产品兴趣与首次到店</li>
+        <li>不承诺直接的销量数字或复购率</li>
+        <li>菲律宾线按社群与内容匹配度选人，播放数据不作为筛选依据</li>
+        <li>效果以区间评估，允许内容与平台分发的自然波动</li>
+      </ul>
+    </div>
+  </div>
+</div></section>
+
+<section><div class="wrap">
+  <div class="sec-head">
+    <div class="sec-no">07 / 从第一轮到第二轮</div>
+    <h2 class="serif">第一轮买的是数据，不只是曝光</h2>
+    <p>7 位达人构成第一轮核心 Campaign。它的价值不止于播放与互动，而在于为下一轮提供真实的决策依据。</p>
+  </div>
+  <div class="waves">
+    <div class="wave">
+      <div class="wn">WAVE 01 · 现在</div>
+      <h3>验证方向，收集信号</h3>
+      <p>三条线同时启动，观察哪个产品 × 人群 × 达人组合真正带来核销、到店、外卖订单与正面反馈。</p>
+      <div class="wtag">目标：找到值得加码的方向</div>
+    </div>
+    <div class="wave w2">
+      <div class="wn">WAVE 02 · 后续</div>
+      <h3>集中预算，放大赢家</h3>
+      <p>不是平均增加所有达人，而是把预算重点投向 Wave 1 表现最好的 Product × Audience × Creator Direction。</p>
+      <div class="wtag">目标：把钱花在被验证有效的方向上</div>
+    </div>
+  </div>
+</div></section>
+
+<footer class="foot"><div class="wrap">
+  <h2 class="serif">下一步</h2>
+  <div class="flow">
+    <span class="s">确认达人与内容方向</span><span class="ar">→</span>
+    <span class="s">脚本共创与合规审核</span><span class="ar">→</span>
+    <span class="s">优惠码与追踪配置</span><span class="ar">→</span>
+    <span class="s">排期发布与复盘</span>
+  </div>
+  <div class="sig">
+    <span>Lucky Tea 鹊茶 · 利雅得新店达人整合方案</span>
+    <span>Confidential · Prepared for the client · 2026</span>
+  </div>
+</div></footer>
+
+</body>
+</html>
